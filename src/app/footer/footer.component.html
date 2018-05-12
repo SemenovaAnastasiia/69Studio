@@ -1,0 +1,29 @@
+<footer class="footer-section text-center">
+  <div class="container">
+    <a class="page-scroll backToTop" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="footer-logo">
+          <img src="assets/images/footer/{{footerData.img}}" alt="">
+          <p>{{footerData.text}}
+            <span>{{footerData.spanText}}</span>
+          </p>
+        </div>
+        <div class="social-icon clearfix">
+          <ul class="list-inline">
+            <li *ngFor="let footerSocial of footerSocialArr">
+              <a href="#">
+                <i class="fa {{footerSocial.linkText}}"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright">
+            <p>&copy; {{footerData.copyright}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

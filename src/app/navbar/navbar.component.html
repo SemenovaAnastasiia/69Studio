@@ -1,0 +1,63 @@
+
+<nav class="navbar navbar-custom navbar-fixed-top transparent white" role="navigation">
+  <div class="container">
+    <div class="search-box-wrap pull-right hidden-sm hidden-xs">
+      <div class="search-icon"></div>
+      <input id="search-box" placeholder="Search">
+    </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images/navbar-img/logo.png" alt="">
+      </a>
+      <a class="navbar-brand alter-logo" href="index.html">
+        <img src="assets/images/navbar-img/logo-alt.png" alt="">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="custom-collapse">
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" *ngFor="let navBar of navBarObj; let i = index" [class.active]="i===0">
+          <a href="#" class="" data-toggle="dropdown" [ngClass]="navBar.secondLevel ? 'dropdown-toggle':'' ">{{navBar.firstLevelName}}</a>
+          
+          <ul class="dropdown-menu" *ngIf="navBar.secondLevel != ''">
+            <li class="dropdown" *ngFor="let navBar2 of navBar.secondLevel; let i = index" [class.active]="i===0">
+              <a href="#" class="" data-toggle="dropdown" [ngClass]="navBar2.thirdLevel ? 'dropdown-toggle':'' "><i *ngIf="navBar2.icon" class="fa {{navBar2.icon}}"></i><span *ngIf="navBar2.icon">&nbsp;</span> {{navBar2.secondLevelName}}</a>
+              
+              <ul class="dropdown-menu" *ngIf="navBar2.thirdLevel != ''">
+                <li *ngFor="let navBar3 of navBar2.thirdLevel">
+                  <a href="#">{{navBar3.thirdLevelName}}</a>
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!--
+<div>
+  <li *ngFor="let navBar of navBarObj">
+    {{navBar.firstLevelName}}
+    <ul *ngIf="navBar.secondLevel">
+      <li style="color: red" *ngFor="let navBar2 of navBar.secondLevel">{{navBar2.secondLevelName}}
+        <ul *ngIf="navBar2.thirdLevel">
+          <li style="color: green" *ngFor="let navBar3 of navBar2.thirdLevel">{{navBar3.thirdLevelName}}
+
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</div>
+-->

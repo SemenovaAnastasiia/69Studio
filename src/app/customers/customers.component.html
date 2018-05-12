@@ -1,0 +1,26 @@
+<section class="client-slider-v4-wrapper section-padding">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">
+        {{title}}
+      </h2>
+    </div>
+    <div class="client-slider-v4 clearfix">
+      <ul class="slides text-center">
+        <li *ngFor="let client of clientsArr" attr.data-thumb="assets/images/customers/{{client.img}}">
+          <blockquote>
+            <p><span style="white-space:pre-wrap;">“{{client.text}}”</span></p>
+            <footer>
+              <div class="client-info">
+                <span class="client-name">{{client.client}}
+                  <span>{{client.spanText}}</span>
+                </span>
+                <span class="client-title">{{client.job}}</span>
+              </div>
+            </footer>
+          </blockquote>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

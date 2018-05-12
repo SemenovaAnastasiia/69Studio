@@ -1,0 +1,15 @@
+<section class="intro-block-section clearfix">
+  <div class="intro-block text-center" *ngFor="let introBlockText of introBlockTextArr">
+    <div class="intro-content">
+      <h2>
+        {{introBlockText.title}}
+      </h2>
+      <p>
+        {{introBlockText.subtitle}}
+      </p>
+      <a href="#" class="learn-more">{{introBlockText.asset}}
+        <i class="fa fa-long-arrow-alt-right"></i>
+      </a>
+    </div>
+  </div>
+</section>

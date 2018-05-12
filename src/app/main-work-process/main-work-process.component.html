@@ -1,0 +1,22 @@
+<section class="section-padding">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">
+         {{sectionTitle.title}}
+      </h2>
+      <p class="sub-title">
+         <span style="white-space:pre-wrap;">{{sectionTitle.subtitle}}</span>
+      </p>
+    </div>
+    <div class="row mt-80">
+      <div class="col-md-4 col-sm-6" *ngFor = "let sectionText of sectionTextArr">
+        <div class="service-box-v2">
+          <h3>
+            <i class="{{sectionText.class}}"></i> {{sectionText.title}}
+          </h3>
+          <p>{{sectionText.p}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

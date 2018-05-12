@@ -1,0 +1,41 @@
+<section class="section-padding">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-title">
+        {{sectionTitle.title}}
+      </h2>
+      <p class="sub-title"><span style="white-space:pre-wrap;">{{sectionTitle.subtitle}}</span></p>
+    </div>
+    <div class="work-together-wrapper">
+      <div class="row mt-80">
+        <div class="col-lg-6 col-md-5 work-together-thumb">
+          <img src="assets/images/main-section/{{sectionTitle.img}}" alt="planning" class="img-responsive">
+        </div>
+        <div class="col-lg-6 col-md-7">
+          <h2>
+            {{sectionText.title}}
+          </h2>
+          <p>
+            {{sectionText.subtitle}}
+          </p>
+          <div class="mission-tab mt-30">
+
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" *ngFor="let tablist of tablists; let i = index" [class.active]="i===0" >
+                <a href="#{{tablist.id}}" role="tab" data-toggle="tab">{{tablist.title}}</a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div *ngFor="let tablist of tablists; let i = index" role="tabpanel" class="tab-pane fade"  [class.in]="i===0" [class.active]="i===0" id="{{tablist.id}}">
+                <p>{{tablist.p1}}</p>
+                <p>{{tablist.p2}}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
